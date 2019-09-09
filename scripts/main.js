@@ -19,18 +19,24 @@ function getComputerChoice() {
 }
 
 function draw() {
+    userChoice_img.setAttribute('class', 'orange-glow');
+    computerChoice_img.setAttribute('class', 'orange-glow');
     result_p.innerHTML = "draw!";
 }
 
 function win(userChoice, computerChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
+    userChoice_img.setAttribute('class', 'green-glow');
+    computerChoice_img.setAttribute('class', 'red-glow');
     result_p.innerHTML = `${userChoice} beats ${computerChoice}. You win!`;
 }
 
 function lose(userChoice, computerChoice) {
     computerScore++;
     computerScore_span.innerHTML = computerScore;
+    userChoice_img.setAttribute('class', 'red-glow');
+    computerChoice_img.setAttribute('class', 'green-glow');
     result_p.innerHTML = `${computerChoice} beats ${userChoice}. You lose!`;
 }
 

@@ -32,7 +32,7 @@ header > h1 {
 }
 
 .badge {
-    background: firebrick;
+    background: royalblue;
     color: white;
     font-size: 14px;
     padding: 2px 10px;
@@ -78,11 +78,13 @@ header > h1 {
     margin: 0 10px;
 }
 
-.choice:hover {
+.choice > img:hover {
     cursor: pointer;
+    border-radius: 50%;
+    background: royalblue;
 }
 
-img{
+img {
     width: 100px;
     height: 100px;
 }
@@ -92,4 +94,19 @@ img{
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+}
+
+.green-glow {
+    border-radius: 50%;
+    background: limegreen;
+}
+
+.red-glow {
+    border-radius: 50%;
+    background: red;
+}
+
+.orange-glow {
+    border-radius: 50%;
+    background: orange;
 }
