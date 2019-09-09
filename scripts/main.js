@@ -1,6 +1,6 @@
 let userScore = 0;
 let computerScore = 0;
-let rival = document.querySelector("input.rival:checked ~ span").innerHTML;
+let rival = document.querySelector("input.rival:checked ~ span").innerHTML.toLowerCase();
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const result_p = document.querySelector(".result > p");
@@ -14,8 +14,10 @@ const winnerElements = {
     spock: ['rock', 'scissors']
 };
 const rivals = {
-    'Random guy' : ['rock', 'paper', 'scissors', 'lizard', 'spock'],
-    Sheldon : ['spock']
+    'random guy' : ['rock', 'paper', 'scissors', 'lizard', 'spock'],
+    sheldon : ['spock'],
+    traditionalist : ['rock', 'paper', 'scissors'],
+    penny : ['wine']
 };
 
 function getComputerChoice() {
@@ -65,7 +67,8 @@ function main() {
     }
     for (let element of document.getElementsByClassName("rival")) {
         element.addEventListener('change', () => {
-            rival = document.querySelector("input.rival:checked ~ span").innerHTML;
+            rival = document.querySelector("input.rival:checked ~ span").innerHTML.toLowerCase();
+            result_p.innerHTML = rival === 'penny' ? "I need to drink..." : "Rock, paper, scissors, lizard, spock!!!";
         });
     }
 
