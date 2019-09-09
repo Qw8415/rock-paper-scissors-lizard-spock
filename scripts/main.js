@@ -68,7 +68,7 @@ function main() {
     for (let element of document.getElementsByClassName("rival")) {
         element.addEventListener('change', () => {
             rival = document.querySelector("input.rival:checked ~ span").innerHTML.toLowerCase();
-            result_p.innerHTML = rival === 'penny' ? "I need to drink..." : "Rock, paper, scissors, lizard, spock!!!";
+            result_p.innerHTML = rival === 'penny' ? "I need to drink..." : "Rock, paper, scissors, lizard, spock!";
         });
     }
 
