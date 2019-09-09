@@ -1,5 +1,6 @@
 let userScore = 0;
 let computerScore = 0;
+let rival = document.querySelector("input.rival:checked ~ span").innerHTML;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const result_p = document.querySelector(".result > p");
@@ -12,10 +13,14 @@ const winnerElements = {
     lizard: ['spock', 'paper'],
     spock: ['rock', 'scissors']
 };
+const rivals = {
+    'Random guy' : ['rock', 'paper', 'scissors', 'lizard', 'spock'],
+    Sheldon : ['spock']
+};
 
 function getComputerChoice() {
-    const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
-    return choices[Math.floor(Math.random() * 5)];
+    const choices = rivals[rival];
+    return choices[Math.floor(Math.random() * choices.length)];
 }
 
 function draw() {
@@ -53,11 +58,17 @@ function game(userChoice) {
 }
 
 function main() {
-    for (let elementsByClassNameKey of document.getElementsByClassName("choice")) {
-        elementsByClassNameKey.addEventListener('click', function() {
+    for (let element of document.getElementsByClassName("choice")) {
+        element.addEventListener('click', function() {
             game(this.getAttribute("id"));
         })
     }
+    for (let element of document.getElementsByClassName("rival")) {
+        element.addEventListener('change', () => {
+            rival = document.querySelector("input.rival:checked ~ span").innerHTML;
+        });
+    }
+
 }
 
 main();

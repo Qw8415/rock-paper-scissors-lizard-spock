@@ -10,39 +10,55 @@
         <h1>Rock Paper Scissors Lizard Spock</h1>
     </header>
 
-    <div class="score-board">
-        <div id="user-label" class="badge">User</div>
-        <div id="computer-label" class="badge">AI</div>
-        <span id="user-score">0</span>:<span id="computer-score">0</span>
-        <div class="battle-arena">
-            <img id="user-choice" src="images/none.png" alt="User's choice">
-            <img id="computer-choice" src="images/none.png" alt="AI's choice">
+    <div id="container">
+        <div class="score-board">
+            <div id="user-label" class="badge">User</div>
+            <div id="computer-label" class="badge">AI</div>
+            <span id="user-score">0</span>:<span id="computer-score">0</span>
+            <div class="battle-arena">
+                <img id="user-choice" src="images/none.png" alt="User's choice">
+                <img id="computer-choice" src="images/none.png" alt="AI's choice">
+            </div>
         </div>
-    </div>
 
-    <div class="result">
-        <p>Rock Paper Scissors Lizard Spock!!!</p>
-    </div>
+        <div class="rivals">
+            <label class="rivals-head">
+                <span>Choose rival</span>
+            </label>
+            <label class="rival">
+                <input class="rival" type="radio" name="rival" checked>
+                <span class="rival">Random guy</span>
+            </label>
+            <label class="rival">
+                <input class="rival" type="radio" name="rival">
+                <span class="rival">Sheldon</span>
+            </label>
+        </div>
 
-    <div class="choices">
-        <div id="rock" class="choice">
-            <img src="images/rock.png" alt="rock">
+        <div class="result">
+            <p>Rock Paper Scissors Lizard Spock!!!</p>
         </div>
-        <div id="paper" class="choice">
-            <img src="images/paper.png" alt="paper">
-        </div>
-        <div id="scissors" class="choice">
-            <img src="images/scissors.png" alt="scissors">
-        </div>
-        <div id="lizard" class="choice">
-            <img src="images/lizard.png" alt="lizard">
-        </div>
-        <div id="spock" class="choice">
-            <img src="images/spock.png" alt="spock">
-        </div>
-    </div>
 
-    <p id="action-message">Make your move</p>
+        <div class="choices">
+            <div id="rock" class="choice">
+                <img src="images/rock.png" alt="rock">
+            </div>
+            <div id="paper" class="choice">
+                <img src="images/paper.png" alt="paper">
+            </div>
+            <div id="scissors" class="choice">
+                <img src="images/scissors.png" alt="scissors">
+            </div>
+            <div id="lizard" class="choice">
+                <img src="images/lizard.png" alt="lizard">
+            </div>
+            <div id="spock" class="choice">
+                <img src="images/spock.png" alt="spock">
+            </div>
+        </div>
+
+        <p id="action-message">Make your move</p>
+    </div>
 
     <script src="scripts/main.js"></script>
 </body>
