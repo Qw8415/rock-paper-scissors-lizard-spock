@@ -2,8 +2,9 @@ let userScore = 0;
 let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
-const scoreBoard_div = document.querySelector(".score-board");
 const result_p = document.querySelector(".result > p");
+const userChoice_img = document.getElementById("user-choice");
+const computerChoice_img = document.getElementById("computer-choice");
 const winnerElements = {
     rock: ['scissors', 'lizard'],
     paper: ['rock', 'spock'],
@@ -35,7 +36,8 @@ function lose(userChoice, computerChoice) {
 
 function game(userChoice) {
     const computerChoice = getComputerChoice();
-    console.log(userChoice, computerChoice);
+    computerChoice_img.src = `images/${computerChoice}.png`;
+    userChoice_img.src = `images/${userChoice}.png`;
     if (computerChoice === userChoice) {
         draw();
     } else {
